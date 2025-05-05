@@ -1,53 +1,53 @@
+/** @type {import('nativewind').Config} */
 module.exports = {
     darkMode: ["class"],
     content: [
         "./app/**/*.{js,jsx,ts,tsx}",
         "./components/**/*.{js,jsx,ts,tsx}",
-        "*.{js,ts,jsx,tsx,mdx}",
     ],
+    presets: [require("nativewind/preset")],
     theme: {
         extend: {
             colors: {
-                border: "hsl(var(--border))",
-                input: "hsl(var(--input))",
-                ring: "hsl(var(--ring))",
+                border: "#E5E7EB", // Fallback for hsl(var(--border))
+                input: "#F9FAFB", // Fallback for hsl(var(--input))
+                ring: "#3B82F6", // Fallback for hsl(var(--ring))
                 background: "#FFFFFF",
-                foreground: "hsl(var(--foreground))",
+                foreground: "#111827", // Fallback for hsl(var(--foreground))
                 primary: "#B22222",
                 secondary: "#FFE5E5",
                 text: "#333333",
                 textLight: "#666666",
                 destructive: {
-                    DEFAULT: "hsl(var(--destructive))",
-                    foreground: "hsl(var(--destructive-foreground))",
+                    DEFAULT: "#EF4444",
+                    foreground: "#FFFFFF",
                 },
                 muted: {
-                    DEFAULT: "hsl(var(--muted))",
-                    foreground: "hsl(var(--muted-foreground))",
+                    DEFAULT: "#E5E7EB",
+                    foreground: "#6B7280",
                 },
                 accent: {
-                    DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))",
+                    DEFAULT: "#6B7280",
+                    foreground: "#FFFFFF",
                 },
                 popover: {
-                    DEFAULT: "hsl(var(--popover))",
-                    foreground: "hsl(var(--popover-foreground))",
+                    DEFAULT: "#FFFFFF",
+                    foreground: "#374151",
                 },
                 card: {
-                    DEFAULT: "hsl(var(--card))",
-                    foreground: "hsl(var(--card-foreground))",
+                    DEFAULT: "#FFFFFF",
+                    foreground: "#111827",
                 },
             },
             borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
+                lg: "0.5rem",
+                md: "calc(0.5rem - 2px)",
+                sm: "calc(0.5rem - 4px)",
             },
             fontFamily: {
-                sans: ["Poppins-Regular", "sans-serif"],
-                medium: ["Poppins-Medium", "sans-serif"],
-                semibold: ["Poppins-SemiBold", "sans-serif"],
-                bold: ["Poppins-Bold", "sans-serif"],
+                sans: ["Inter-Regular", "sans-serif"],
+                medium: ["Inter-Medium", "sans-serif"],
+                bold: ["Inter-Bold", "sans-serif"],
             },
         },
     },

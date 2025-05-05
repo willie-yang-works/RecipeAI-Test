@@ -1,55 +1,26 @@
-"use client";
-
 import { Stack } from "expo-router";
-import { useColorScheme } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { useFonts } from "expo-font";
-import { SplashScreen } from "expo-router";
+import * as Font from "expo-font";
 import { useEffect } from "react";
+import "@/global.css";
 
-import "../global.css";
-
-// Prevent the splash screen from auto-hiding before asset loading is complete
-SplashScreen.preventAutoHideAsync();
-
-export default function RootLayout() {
-    const colorScheme = useColorScheme();
-
-    const [loaded, error] = useFonts({
-        "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
-        "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
-        "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
-        "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
-    });
-
-    // Expo Router uses Error Boundaries to catch errors in the navigation tree.
+export default function Layout() {
     useEffect(() => {
-        if (error) throw error;
-    }, [error]);
-
-    useEffect(() => {
-        if (loaded) {
-            SplashScreen.hideAsync();
-        }
-    }, [loaded]);
-
-    if (!loaded) {
-        return null;
-    }
+        (async () => {
+            await Font.loadAsync({
+                "Inter-Regular": require("../assets/fonts/Inter-Regular.ttf"),
+                "Inter-Medium": require("../assets/fonts/Inter-Medium.ttf"),
+                "Inter-Bold": require("../assets/fonts/Inter-Bold.ttf"),
+            });
+        })();
+    }, []);
 
     return (
-        <SafeAreaProvider>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <StatusBar style="dark" />
-                <Stack
-                    screenOptions={{
-                        headerShown: false,
-                        contentStyle: { backgroundColor: "#FFFFFF" },
-                    }}
-                />
-            </GestureHandlerRootView>
-        </SafeAreaProvider>
+        <Stack>
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen
+                name="[recipeDetails]"
+                options={{ title: "Recipe Details" }}
+            />
+        </Stack>
     );
 }
