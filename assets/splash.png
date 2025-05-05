@@ -1,0 +1,10 @@
+<svg width="1242" height="2436" viewBox="0 0 1242 2436" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1242" height="2436" fill="#10B981"/>
+  <path d="M471 1068H771V1468C771 1501.14 744.137 1528 711 1528H531C497.863 1528 471 1501.14 471 1468V1068Z" fill="white"/>
+  <path d="M421 1018H821V1068H421V1018Z" fill="#D1FAE5"/>
+  <path d="M521 918H621V1018H521V918Z" fill="#D1FAE5"/>
+  <path d="M551 1148H601V1268H551V1148Z" fill="#059669"/>
+  <path d="M511 1208H551V1268H511V1208Z" fill="#059669"/>
+  <path d="M601 1208H641V1268H601V1208Z" fill="#059669"/>
+  <text x="621" y="1668" text-anchor="middle" font-family="Arial" font-size="72" font-weight="bold" fill="white">What's in Your Fridge</text>
+</svg>
